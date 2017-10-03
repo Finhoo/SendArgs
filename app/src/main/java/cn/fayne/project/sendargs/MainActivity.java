@@ -19,7 +19,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btnStartAty:
                 Intent i = new Intent(MainActivity.this, TheAty.class);
-                i.putExtra("data", "Hello jike");
+//                i.putExtra("data", "Hello jike");
+                Bundle b = new Bundle();
+                b.putString("name", "jinhao");
+                b.putInt("age", 20);
+                b.putString("test", "fan");
+//                i.putExtras(b);
+                i.putExtra("data", b);
                 startActivity(i);
                 break;
         }

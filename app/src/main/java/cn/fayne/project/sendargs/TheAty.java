@@ -14,7 +14,10 @@ public class TheAty extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_aty);
         Intent i = getIntent();
+//        Bundle data = i.getExtras();
+        Bundle data = i.getBundleExtra("data");
         tv = (TextView) findViewById(R.id.tv);
-        tv.setText(i.getStringExtra("data"));
+//        tv.setText(i.getStringExtra("data"));
+        tv.setText(String.format("name = %s, age = %d, test = %s", data.getString("name"), data.getInt("age"), data.getString("test", "not")));
     }
 }
